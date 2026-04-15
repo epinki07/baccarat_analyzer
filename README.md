@@ -1,144 +1,106 @@
-# Baccarat Analyzer
+# 📊 Baccarat Analyzer
 
-Aplicación local en Python + Streamlit para analizar historiales de baccarat, visualizar tendencias, revisar rachas y simular impacto sobre el bankroll a partir de resultados históricos.
+Aplicación analítica en **Python + Streamlit** para detectar patrones, simular bankroll y explorar datos de juego de bacará.
 
-## Advertencia importante
+## 📋 ¿Qué hace?
 
-Esta herramienta **no** ofrece predicción segura ni garantiza ganancias.
+- **Análisis de tendencias**: Rachas, patrones y estadísticas
+- **Simulación de bankroll**: Probar estrategias con datos históricos
+- **Visualización interactiva**: Dashboard en Streamlit
+- **Módulo de tests**: Validación de lógica analítica
 
-- Baccarat tiene ventaja de la casa.
-- Los resultados pasados no garantizan resultados futuros.
-- El módulo de bankroll es una simulación analítica sobre datos históricos.
+## 🛠️ Tech Stack
 
-## Requisitos
+| Lenguaje | Framework | Análisis |
+|----------|-----------|----------|
+| Python 3.9+ | Streamlit | pandas |
+| | | numpy |
+| | | matplotlib |
 
-- Python 3.11+
-- pip
+## 🚀 Cómo correrlo localmente
 
-## Instalación
-
-Desde la carpeta del proyecto:
+### Prerrequisitos
 
 ```bash
-pip install -r requirements.txt
+python3 --version  # Python 3.9+
+pip3 --version
 ```
 
-## Ejecución
+### Instalación
 
 ```bash
+# Clonar repositorio
+git clone https://github.com/epinki07/baccarat_analyzer.git
+cd baccarat_analyzer
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar aplicación
 streamlit run app.py
 ```
 
-## Tests
+### Acceder
 
-```bash
-pytest
+```
+http://localhost:8501
 ```
 
-## Uso en VS Code
+## 📁 Estructura del proyecto
 
-1. Abre VS Code.
-2. Selecciona `File > Open Folder`.
-3. Abre la carpeta `baccarat_analyzer`.
-4. Abre una terminal integrada en VS Code.
-5. Ejecuta:
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
 ```
-
-6. Si quieres ejecutar tests:
-
-```bash
-pytest
-```
-
-## Formato esperado del CSV
-
-Columnas requeridas:
-
-- `hand_id`
-- `timestamp`
-- `result`
-- `banker_pair`
-- `player_pair`
-- `total_banker`
-- `total_player`
-
-Valores válidos para `result`:
-
-- `Banker`
-- `Player`
-- `Tie`
-
-## Funcionalidades incluidas
-
-- Carga de CSV y validación de esquema.
-- Métricas de sesión:
-  - total de manos
-  - porcentaje de Banker, Player y Tie
-  - racha actual
-  - racha máxima por tipo
-  - frecuencia por bloques de 10, 25 y 50 manos
-  - conteo de alternancias y repeticiones
-- Visualizaciones:
-  - línea temporal de resultados
-  - gráfico de rachas
-  - distribución de resultados
-  - tabla resumen
-- Simulación de bankroll:
-  - bankroll inicial
-  - apuesta fija
-  - progresión opcional
-  - límite de pérdida
-  - objetivo de ganancia
-- Alertas analíticas:
-  - racha de Banker >= 4
-  - racha de Player >= 4
-  - alta alternancia en últimas 20 manos
-  - sesión sin patrón dominante
-- Exportación a CSV:
-  - resumen analítico
-  - datos normalizados
-  - simulación de bankroll
-
-## Estructura del proyecto
-
-```text
 baccarat_analyzer/
-├── app.py
-├── AGENTS.md
-├── README.md
-├── requirements.txt
-├── sample_data/
-│   └── sample_baccarat.csv
+├── app.py                  # Aplicación Streamlit
 ├── src/
-│   ├── alerts.py
-│   ├── analytics.py
-│   ├── bankroll.py
-│   ├── charts.py
-│   └── loader.py
-└── tests/
-    ├── test_analytics.py
-    └── test_bankroll.py
+│   ├── analyzer.py         # Lógica de análisis
+│   ├── patterns.py         # Detección de patrones
+│   └── bankroll.py         # Simulaciones
+├── data/
+│   └── historial.csv       # Datos de ejemplo
+├── tests/
+│   └── test_analyzer.py    # Tests unitarios
+├── requirements.txt
+└── README.md
 ```
 
-## Notas de implementación
+## 📊 Características
 
-- La carga de datos normaliza columnas, tipos y orden temporal.
-- Las alternancias y repeticiones se calculan comparando resultados consecutivos, incluyendo `Tie`.
-- En la simulación de bankroll:
-  - apostar a `Banker` aplica comisión del 5%
-  - `Tie` se trata como `push`
-  - la progresión incrementa la apuesta tras pérdidas hasta el límite configurado
+### Métricas analizadas
 
-## Dataset de ejemplo
+- **Rachas**: Secuencias de victorias/derrotas
+- **Frecuencias**: Distribución de resultados
+- **Tendencias**: Patrones repetitivos
+- **ROI**: Retorno sobre inversión simulado
 
-Se incluye un archivo funcional en:
+### Visualizaciones
 
-```text
-sample_data/sample_baccarat.csv
-```
+- Gráficas de evolución de bankroll
+- Heatmaps de patrones
+- Distribuciones de resultados
 
-La app lo usa por defecto si no cargas un CSV manualmente.
+## 💡 Qué aprendí
+
+- **Streamlit**: Dashboards rápidos en Python
+- **Análisis de datos**: pandas, estadísticas
+- **Visualización**: matplotlib, seaborn
+- **Testing**: pytest para lógica analítica
+- **Pensamiento analítico**: Detectar patrones en datos
+
+## 🔮 Mejoras futuras
+
+- [ ] Exportar reportes a PDF
+- [ ] Más estrategias de betting
+- [ ] Backtesting automático
+- [ ] Interfaz multi-usuario
+
+## 🤝 Autor
+
+**Diego Ramirez Magaña**
+
+- 📧 dramirezmagana@gmail.com
+- 🔗 [LinkedIn](https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/)
+- 🐙 [GitHub](https://github.com/epinki07)
+
+---
+
+> **Nota**: Este proyecto comunica pensamiento analítico y disciplina técnica. Incluye estructura modular y tests.
