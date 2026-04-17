@@ -1,106 +1,42 @@
-# 📊 Baccarat Analyzer
+# Baccarat Analyzer
 
-Aplicación analítica en **Python + Streamlit** para detectar patrones, simular bankroll y explorar datos de juego de bacará.
+Aplicacion analitica en Python y Streamlit para detectar patrones, simular bankroll y explorar datos de partidas de bacara. Incluye estructura modular y pruebas unitarias.
 
-## 📋 ¿Qué hace?
+## Que hace
 
-- **Análisis de tendencias**: Rachas, patrones y estadísticas
-- **Simulación de bankroll**: Probar estrategias con datos históricos
-- **Visualización interactiva**: Dashboard en Streamlit
-- **Módulo de tests**: Validación de lógica analítica
+Toma un historial de partidas en CSV y genera estadisticas sobre rachas, frecuencia de resultados, distribucion y evolucion del bankroll. El dashboard es interactivo y corre en el navegador.
 
-## 🛠️ Tech Stack
-
-| Lenguaje | Framework | Análisis |
-|----------|-----------|----------|
-| Python 3.9+ | Streamlit | pandas |
-| | | numpy |
-| | | matplotlib |
-
-## 🚀 Cómo correrlo localmente
-
-### Prerrequisitos
+## Como correrlo
 
 ```bash
-python3 --version  # Python 3.9+
-pip3 --version
-```
-
-### Instalación
-
-```bash
-# Clonar repositorio
 git clone https://github.com/epinki07/baccarat_analyzer.git
 cd baccarat_analyzer
-
-# Instalar dependencias
 pip install -r requirements.txt
-
-# Ejecutar aplicación
 streamlit run app.py
 ```
 
-### Acceder
+La aplicacion queda disponible en `http://localhost:8501`.
 
-```
-http://localhost:8501
-```
-
-## 📁 Estructura del proyecto
+## Estructura
 
 ```
 baccarat_analyzer/
-├── app.py                  # Aplicación Streamlit
+├── app.py
 ├── src/
-│   ├── analyzer.py         # Lógica de análisis
-│   ├── patterns.py         # Detección de patrones
-│   └── bankroll.py         # Simulaciones
+│   ├── analyzer.py
+│   ├── patterns.py
+│   └── bankroll.py
 ├── data/
-│   └── historial.csv       # Datos de ejemplo
+│   └── historial.csv
 ├── tests/
-│   └── test_analyzer.py    # Tests unitarios
-├── requirements.txt
-└── README.md
+│   └── test_analyzer.py
+└── requirements.txt
 ```
 
-## 📊 Características
+## Tech Stack
 
-### Métricas analizadas
+Python 3.9+, Streamlit, pandas, numpy, matplotlib.
 
-- **Rachas**: Secuencias de victorias/derrotas
-- **Frecuencias**: Distribución de resultados
-- **Tendencias**: Patrones repetitivos
-- **ROI**: Retorno sobre inversión simulado
+## Autor
 
-### Visualizaciones
-
-- Gráficas de evolución de bankroll
-- Heatmaps de patrones
-- Distribuciones de resultados
-
-## 💡 Qué aprendí
-
-- **Streamlit**: Dashboards rápidos en Python
-- **Análisis de datos**: pandas, estadísticas
-- **Visualización**: matplotlib, seaborn
-- **Testing**: pytest para lógica analítica
-- **Pensamiento analítico**: Detectar patrones en datos
-
-## 🔮 Mejoras futuras
-
-- [ ] Exportar reportes a PDF
-- [ ] Más estrategias de betting
-- [ ] Backtesting automático
-- [ ] Interfaz multi-usuario
-
-## 🤝 Autor
-
-**Diego Ramirez Magaña**
-
-- 📧 dramirezmagana@gmail.com
-- 🔗 [LinkedIn](https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/)
-- 🐙 [GitHub](https://github.com/epinki07)
-
----
-
-> **Nota**: Este proyecto comunica pensamiento analítico y disciplina técnica. Incluye estructura modular y tests.
+Diego Ramirez Magana — [LinkedIn](https://www.linkedin.com/in/diego-ramirez-maga%C3%B1a-b15022298/) | [GitHub](https://github.com/epinki07) | dramirezmagana@gmail.com
